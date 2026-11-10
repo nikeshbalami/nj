@@ -24,3 +24,5 @@ Set `verified: true` on an item once its details are confirmed to remove the "Ch
 
 ## Deploy
 Push to `main` and enable GitHub Pages (Settings, Pages, deploy from branch `main`, folder `/`).
+
+Leave `url` and `baseurl` unset in `_config.yml`. GitHub Pages fills them in, so assets load correctly under a project path such as `/nj/`.

@@ -4,8 +4,9 @@ description: >-
   Nhasala Joshi is an engineer turned development practitioner, and the
   co-founder and Executive Director of Women Leaders in Technology (WLiT) in Nepal.
 lang: en
-url: "" # Set to the live origin, for example https://nhasalajoshi.com
-baseurl: ""
+# `url` and `baseurl` are deliberately unset. On GitHub Pages they are filled in
+# automatically (for example /nj for a project site). Setting baseurl to "" breaks
+# every asset path on a project site. Set both only when a custom domain is added.
 
 author:
   name: Nhasala Joshi
