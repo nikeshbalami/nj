@@ -1,0 +1,50 @@
+---
+layout: page
+title: Projects
+lede: Programs, tools, and convenings Nhasala has designed, led, or started, across four areas of work.
+description: Projects by Nhasala Joshi across community building, inclusion, digital rights and data, and internet governance.
+---
+<section class="band">
+  <div class="wrap">
+    <div class="filters" role="group" aria-label="Filter projects by area">
+      <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+      {%- for a in site.data.pillars %}
+      <button class="chip p-{{ a.id }}" type="button" data-filter="{{ a.id }}" aria-pressed="false">{{ a.name }}</button>
+      {%- endfor %}
+    </div>
+    <p class="count" aria-live="polite" data-count>Showing all {{ site.data.projects.size }} projects</p>
+
+    <ol class="entries">
+      {%- for p in site.data.projects %}
+      {%- assign area = site.data.pillars | where: "id", p.pillar | first %}
+      <li class="entry p-{{ p.pillar }}" id="{{ p.id }}" data-pillar="{{ p.pillar }}" tabindex="-1">
+        <div class="entry__meta">
+          <ul class="badges">{% include badge.html pillar=p.pillar %}</ul>
+          <p>{{ p.role }}<br>{{ p.years }}</p>
+        </div>
+        <div class="entry__body">
+          <h2 class="entry__title">{{ p.title }} {% include flag.html item=p %}</h2>
+          <p>{{ p.summary }}</p>
+          {%- if p.problem != "" or p.approach != "" or p.result != "" %}
+          <details>
+            <summary>Problem, approach, and result</summary>
+            <dl class="steps">
+              {% if p.problem != "" %}<div><dt>Problem</dt><dd>{{ p.problem }}</dd></div>{% endif %}
+              {% if p.approach != "" %}<div><dt>Approach</dt><dd>{{ p.approach }}</dd></div>{% endif %}
+              {% if p.result != "" %}<div><dt>Result</dt><dd>{{ p.result }}</dd></div>{% endif %}
+            </dl>
+          </details>
+          {%- endif %}
+        </div>
+        <div class="entry__img">
+          {%- if p.image != "" %}
+          <img src="{{ p.image | relative_url }}" alt="{{ p.image_alt }}" width="640" height="400" loading="lazy">
+          {%- else %}
+          {% include placeholder.html label="Project image" %}
+          {%- endif %}
+        </div>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>

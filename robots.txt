@@ -1,0 +1,8 @@
+---
+layout: null
+sitemap: false
+---
+User-agent: *
+{% if site.robots_noindex %}Disallow: /{% else %}Allow: /
+
+Sitemap: {{ '/sitemap.xml' | absolute_url }}{% endif %}

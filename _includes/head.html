@@ -1,0 +1,54 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{%- if page.url == "/" -%}
+  {%- assign page_title = site.title | append: ": " | append: site.tagline | remove: "." -%}
+{%- else -%}
+  {%- assign page_title = page.title | append: " | " | append: site.title -%}
+{%- endif -%}
+{%- assign page_desc = page.description | default: site.description | strip_newlines | strip -%}
+<title>{{ page_title }}</title>
+<meta name="description" content="{{ page_desc | escape }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+{%- if site.robots_noindex %}
+<meta name="robots" content="noindex, nofollow">
+{%- endif %}
+<link rel="license" href="{{ site.license.url }}">
+<meta name="theme-color" content="#2A0F3F">
+<link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{{ page_title | escape }}">
+<meta property="og:description" content="{{ page_desc | escape }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ '/assets/img/og.png' | absolute_url }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page_title | escape }}">
+<meta name="twitter:description" content="{{ page_desc | escape }}">
+<meta name="twitter:image" content="{{ '/assets/img/og.png' | absolute_url }}">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": {{ site.author.name | jsonify }},
+  "url": {{ "/" | absolute_url | jsonify }},
+  "jobTitle": {{ site.author.job_title | jsonify }},
+  "description": {{ site.description | strip_newlines | strip | jsonify }},
+  "worksFor": {
+    "@type": "Organization",
+    "name": {{ site.author.employer | jsonify }}{% if site.author.employer_url != "" %},
+    "url": {{ site.author.employer_url | jsonify }}{% endif %}
+  },
+  "address": { "@type": "PostalAddress", "addressCountry": "NP" },
+  "sameAs": [{{ site.author.linkedin | jsonify }}]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&display=swap">
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+<script>document.documentElement.classList.add('js')</script>

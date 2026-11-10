@@ -1,0 +1,18 @@
+# Expertise per area id, plus the leadership list for the plain block on About.
+community:
+  - Fellowship and program design
+  - Mentoring and community building
+  - Event and convening design
+inclusion:
+  - Inclusive program design
+  - Gender and technology
+data:
+  - Open data and gender data
+  - Civic technology
+governance:
+  - Multistakeholder facilitation
+  - Youth engagement in internet policy
+leadership:
+  - Organizational leadership and strategy
+  - Team building and operations
+  - Partnerships

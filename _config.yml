@@ -1,0 +1,44 @@
+title: Nhasala Joshi
+tagline: Building inclusive tech ecosystems.
+description: >-
+  Nhasala Joshi is an engineer turned development practitioner, and the
+  co-founder and Executive Director of Women Leaders in Technology (WLiT) in Nepal.
+lang: en
+url: "" # Set to the live origin, for example https://nhasalajoshi.com
+baseurl: ""
+
+author:
+  name: Nhasala Joshi
+  job_title: Co-founder and Executive Director
+  employer: Women Leaders in Technology (WLiT)
+  employer_url: "" # Confirm WLiT website
+  location: Kathmandu, Nepal # Confirm
+  # Placeholders. Replace with confirmed contact details.
+  email: hello@example.com
+  linkedin: https://www.linkedin.com/
+
+# Optional hero photo, for example /assets/img/hero.jpg. Leave empty for the illustration.
+hero_image: ""
+
+# Keep both of these true until the site launches. Do not turn off without the owner's approval.
+robots_noindex: true
+show_draft_flags: true
+
+license:
+  name: CC BY 4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+
+plugins:
+  - jekyll-sitemap
+
+markdown: kramdown
+permalink: pretty
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - CONTRIBUTING.md
+  - docs/
+  - vendor/
+  - .bundle/

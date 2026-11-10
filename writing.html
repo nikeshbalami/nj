@@ -1,0 +1,88 @@
+---
+layout: page
+title: Writing and speaking
+lede: Publications, talks, and a speaker kit for organizers.
+description: Writing, talks, and a speaker kit for Nhasala Joshi, including short and long bios.
+---
+<section class="band" id="publications" aria-labelledby="pub-title">
+  <div class="wrap">
+    <h2 id="pub-title">Publications</h2>
+    <ul class="rows">
+      {%- for item in site.data.writing %}
+      <li class="row">
+        <p class="row__year">{{ item.year }}</p>
+        <div>
+          <h3 class="row__title">{% if item.url != "" %}<a href="{{ item.url }}">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %} {% include flag.html item=item %}</h3>
+          <p class="row__meta">{{ item.type }}, {{ item.role }}</p>
+        </div>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="band band--tint" id="speaking" aria-labelledby="talks-title">
+  <div class="wrap">
+    <h2 id="talks-title">Speaking and convening</h2>
+    <ul class="rows">
+      {%- for t in site.data.talks %}
+      <li class="row">
+        <p class="row__year">{{ t.year }}</p>
+        <div>
+          <h3 class="row__title">{% if t.url != "" %}<a href="{{ t.url }}">{{ t.title }}</a>{% else %}{{ t.title }}{% endif %} {% include flag.html item=t %}</h3>
+          <p class="row__meta">{{ t.role }}{% if t.place != "" %}, {{ t.place }}{% endif %}</p>
+        </div>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="band" id="speaker-kit" aria-labelledby="kit-title">
+  <div class="wrap">
+    <h2 id="kit-title">Speaker kit</h2>
+    <h3>Topics</h3>
+    <ul class="topics">
+      {%- for t in site.data.kit.topics %}<li>{{ t }}</li>{% endfor %}
+    </ul>
+    <div class="bios">
+      <div class="bio">
+        <h3>Short bio</h3>
+        <p id="bio-short">{{ site.data.kit.bio_short }}</p>
+        <button class="btn btn--ink btn--sm" type="button" data-copy="bio-short">Copy short bio</button>
+      </div>
+      <div class="bio">
+        <h3>Long bio</h3>
+        <p id="bio-long">{{ site.data.kit.bio_long }}</p>
+        <button class="btn btn--ink btn--sm" type="button" data-copy="bio-long">Copy long bio</button>
+      </div>
+    </div>
+    <p class="copy-status" role="status" data-copy-status></p>
+    <h3>Downloads</h3>
+    <ul class="rows rows--compact">
+      {%- for d in site.data.kit.downloads %}
+      <li class="row">
+        <p class="row__year">File</p>
+        <div><p class="row__title">{% if d.url != "" %}<a href="{{ d.url }}">{{ d.label }}</a>{% else %}{{ d.label }} <span class="muted">(coming soon)</span>{% endif %}</p></div>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="band band--tint" id="recognition" aria-labelledby="rec-title">
+  <div class="wrap">
+    <h2 id="rec-title">Recognition</h2>
+    <ul class="rows">
+      {%- for r in site.data.kit.recognition %}
+      <li class="row">
+        <p class="row__year">{{ r.year }}</p>
+        <div>
+          <h3 class="row__title">{{ r.title }} {% include flag.html item=r %}</h3>
+          {% if r.meta != "" %}<p class="row__meta">{{ r.meta }}</p>{% endif %}
+        </div>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

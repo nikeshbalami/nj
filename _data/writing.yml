@@ -1,0 +1,19 @@
+# Newest first. The home page shows the first three.
+- year: 2025
+  title: "Women's Liberty On The Internet: A Take On Agency And Ownership"
+  type: Commentary
+  role: Author
+  url: ""
+  verified: true
+- year: 2023
+  title: "Microfinance in Nepal: Trends and Challenges"
+  type: Research paper
+  role: Contributor
+  url: ""
+  verified: true
+- year: 2020
+  title: Saving jobs during Covid crisis
+  type: Newspaper article
+  role: Co-author
+  url: ""
+  verified: true

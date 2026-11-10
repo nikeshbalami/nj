@@ -1,0 +1,16 @@
+{%- assign t = include.pillar -%}
+<a class="tile p-{{ t.id }}{% if include.lead %} tile--lead{% endif %}" href="{{ '/about/' | relative_url }}#{{ t.id }}">
+  <svg class="tile__ring" aria-hidden="true" focusable="false" viewBox="0 0 100 100">
+    {%- if include.lead -%}
+    <circle cx="50" cy="50" r="42" fill="none" stroke="currentColor" stroke-width="10"/>
+    <circle cx="50" cy="50" r="24" fill="none" stroke="currentColor" stroke-width="5"/>
+    {%- else -%}
+    <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="7" stroke-dasharray="{% case t.id %}{% when 'inclusion' %}62 18 40 18 113{% when 'data' %}190 61{% else %}30 14 30 14 30 14 30 14 30 39{% endcase %}"/>
+    {%- endif -%}
+  </svg>
+  <span class="tile__text">
+    <span class="tile__name">{{ t.name }}</span>
+    <span class="tile__summary">{{ t.summary }}</span>
+    <span class="tile__more">Explore this area</span>
+  </span>
+</a>

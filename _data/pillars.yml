@@ -1,0 +1,44 @@
+# The four areas of work. Order here is the order on the site.
+# `short` is the badge label.
+# The first item is the lead area and renders as the large tile.
+- id: community
+  short: Community
+  name: Community and ecosystem building
+  summary: Fellowships, networks, and convenings that help more people enter technology, stay, and lead.
+  statement: Technology careers last when people have a cohort, a mentor, and a room to grow into.
+  looks_like:
+    - Fellowship programs that pair technical training with leadership skills
+    - Bootcamps, mentoring circles, and community projects
+    - Flagship community events that bring practitioners together
+  orgs: [wlit]
+  verified: false
+- id: inclusion
+  short: Inclusion
+  name: Inclusion
+  summary: Room for women, queer and trans people, and others the tech ecosystem leaves behind.
+  statement: An ecosystem is only as strong as the people it lets in.
+  looks_like:
+    - Programs designed with and for queer and trans technologists
+    - Visibility and participation initiatives
+  orgs: [wlit]
+  verified: false
+- id: data
+  short: Rights, data, civic tech
+  name: Digital rights, data, and civic tech
+  summary: Open data, gender data, and civic tools that document harm and push for accountability.
+  statement: What is not counted cannot be fixed, so the data has to exist and be open.
+  looks_like:
+    - Open, multilingual datasets
+    - Tools that help detect and prevent online gender-based violence
+  orgs: [wlit]
+  verified: false
+- id: governance
+  short: Internet governance
+  name: Internet governance
+  summary: Young people's and women's voices in the spaces where internet policy is shaped.
+  statement: Internet policy should be shaped by the people it affects.
+  looks_like:
+    - Youth and multistakeholder summits
+    - Facilitation that brings youth, civil society, government, and the technical community together
+  orgs: [wlit]
+  verified: false

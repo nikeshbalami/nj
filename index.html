@@ -1,0 +1,72 @@
+---
+layout: default
+title: Home
+---
+<section class="hero on-ink{% if site.hero_image != '' %} hero--image{% endif %}"{% if site.hero_image != '' %} style="--hero-img: url('{{ site.hero_image | relative_url }}')"{% endif %}>
+  <div class="wrap hero__inner">
+    <div class="hero__text">
+      <h1>Building inclusive tech ecosystems.</h1>
+      <p class="hero__sub">Digital rights and feminist tech advocate</p>
+      <p class="hero__lede">Nhasala Joshi is an engineer turned development practitioner, and the co-founder and Executive Director of Women Leaders in Technology (WLiT) in Nepal.</p>
+      <div class="hero__actions">
+        <a class="btn btn--gold" href="{{ '/about/' | relative_url }}#areas">Explore the work</a>
+        <a class="btn btn--line" href="{{ '/contact/' | relative_url }}">Invite Nhasala to speak</a>
+      </div>
+    </div>
+    {%- if site.hero_image == '' %}
+    <div class="hero__art">{% include hero-art.html %}</div>
+    {%- endif %}
+  </div>
+</section>
+
+<section class="glance-band" aria-label="At a glance">
+  <div class="wrap">
+    <p class="glance">Over a decade leading Women Leaders in Technology: <strong>14</strong> fellowship cohorts, <strong>200+</strong> women tech professionals, and <strong>1,000+</strong> attendees at flagship community events.</p>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="areas-title">
+  <div class="wrap">
+    <h2 id="areas-title">Four areas of work</h2>
+    <div class="tiles">
+      {%- for pillar in site.data.pillars %}
+        {% include tile.html pillar=pillar lead=forloop.first %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="band band--tint" aria-labelledby="projects-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="projects-title">Selected projects</h2>
+      <a class="textlink" href="{{ '/projects/' | relative_url }}">See all projects</a>
+    </div>
+    <div class="cards">
+      {%- assign featured = site.data.projects | where: "featured", true %}
+      {%- for project in featured %}
+        {% include card.html project=project %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="writing-title">
+  <div class="wrap">
+    <h2 id="writing-title">Recent writing</h2>
+    <ul class="rows">
+      {%- for item in site.data.writing limit: 3 %}
+      <li class="row">
+        <p class="row__year">{{ item.year }}</p>
+        <div>
+          <h3 class="row__title">{% if item.url != "" %}<a href="{{ item.url }}">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %} {% include flag.html item=item %}</h3>
+          <p class="row__meta">{{ item.type }}, {{ item.role }}</p>
+        </div>
+      </li>
+      {%- endfor %}
+    </ul>
+    <p class="after-rows"><a class="textlink" href="{{ '/writing/' | relative_url }}">Writing and speaking</a></p>
+  </div>
+</section>
+
+{% include cta.html %}

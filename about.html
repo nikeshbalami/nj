@@ -1,0 +1,93 @@
+---
+layout: page
+title: About
+lede: An engineer turned development practitioner, building inclusive tech ecosystems in Nepal.
+description: About Nhasala Joshi, co-founder and Executive Director of Women Leaders in Technology (WLiT), Nepal, and her work on inclusion, digital rights, data, and internet governance.
+---
+{%- assign about = site.data.about -%}
+<section class="band">
+  <div class="wrap about">
+    <aside class="about__aside" aria-label="Quick facts">
+      {% include portrait.html %}
+      <dl class="facts">
+        {%- for f in about.glance %}
+        <div><dt>{{ f.label }}</dt><dd>{{ f.value }}</dd></div>
+        {%- endfor %}
+      </dl>
+    </aside>
+    <div class="about__main">
+      <h2>Her story</h2>
+      <div class="prose">
+        {%- for p in about.story %}
+        <p>{{ p }}</p>
+        {%- endfor %}
+      </div>
+      <h3 class="path-title">Path</h3>
+      <ol class="path">
+        {%- for step in about.path %}
+        <li><h4>{{ step.title }}</h4><p>{{ step.text }}</p></li>
+        {%- endfor %}
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="band band--tint" id="areas" aria-labelledby="areas-title">
+  <div class="wrap">
+    <h2 id="areas-title">Areas of work</h2>
+    <p class="lede">Four connected areas, each with its own color across the site.</p>
+    {%- for a in site.data.pillars %}
+    <article class="area-block p-{{ a.id }}{% if forloop.first %} area-block--lead{% endif %}" id="{{ a.id }}" aria-labelledby="{{ a.id }}-title">
+      <div class="area-cols">
+        <div class="area-block__head">
+          <h3 id="{{ a.id }}-title">{{ a.name }} {% include flag.html item=a %}</h3>
+          <p class="statement">{{ a.statement }}</p>
+        </div>
+        <div class="area-block__body">
+          <h4>What this looks like</h4>
+          <ul class="inline-list">{% for x in a.looks_like %}<li>{{ x }}</li>{% endfor %}</ul>
+          <h4>Expertise</h4>
+          <ul class="inline-list">{% for x in site.data.expertise[a.id] %}<li>{{ x }}</li>{% endfor %}</ul>
+          <h4>Organizations</h4>
+          <ul class="inline-list">
+            {%- for oid in a.orgs %}{% assign o = site.data.organizations | where: "id", oid | first %}<li>{{ o.name }}</li>{% endfor %}
+          </ul>
+          {%- assign ap = site.data.projects | where: "pillar", a.id %}
+          {%- if ap.size > 0 %}
+          <h4>Selected projects</h4>
+          <ul class="inline-list">
+            {%- for p in ap %}<li><a href="{{ '/projects/' | relative_url }}#{{ p.id }}">{{ p.title }}</a></li>{% endfor %}
+          </ul>
+          {%- endif %}
+          <p><a class="textlink" href="{{ '/projects/' | relative_url }}#{{ a.id }}">All projects in this area</a></p>
+        </div>
+      </div>
+    </article>
+    {%- endfor %}
+    <article class="area-block area-block--plain" aria-labelledby="leadership-title">
+      <div class="area-cols">
+        <div class="area-block__head"><h3 id="leadership-title">Leadership and operations</h3></div>
+        <div class="area-block__body">
+          <ul class="inline-list">{% for x in site.data.expertise.leadership %}<li>{{ x }}</li>{% endfor %}</ul>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="roles-title">
+  <div class="wrap">
+    <h2 id="roles-title">Roles and affiliations</h2>
+    <ul class="rows">
+      {%- for o in site.data.organizations %}
+      <li class="row">
+        <p class="row__year">{{ o.years }}</p>
+        <div>
+          <h3 class="row__title">{% if o.url != "" %}<a href="{{ o.url }}">{{ o.name }}</a>{% else %}{{ o.name }}{% endif %} {% include flag.html item=o %}</h3>
+          <p class="row__meta">{{ o.role }}</p>
+        </div>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

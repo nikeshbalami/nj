@@ -1,0 +1,55 @@
+# One entry per project. `pillar` must match an id in pillars.yml.
+# `featured: true` shows the project on the home page (one per area).
+# `image` is a path under /assets/img/; leave empty for the placeholder.
+- id: wlit-fellowship
+  title: WLiT Fellowship
+  pillar: community
+  role: Designed and directed
+  years: 2015 to present
+  summary: A flagship fellowship that builds technical and leadership skills in young women studying computing, through bootcamps, mentoring, and community projects.
+  problem: ""
+  approach: ""
+  result: "14 fellowship cohorts and more than 200 women tech professionals."
+  image: ""
+  image_alt: ""
+  featured: true
+  verified: true
+- id: tech-for-trans
+  title: Tech for Trans
+  pillar: inclusion
+  role: Spearheaded
+  years: To be confirmed
+  summary: An inclusion initiative that advances queer and trans visibility and participation in technology.
+  problem: ""
+  approach: ""
+  result: ""
+  image: ""
+  image_alt: ""
+  featured: true
+  verified: false
+- id: mulcam
+  title: MulCAM
+  pillar: data
+  role: Initiated
+  years: To be confirmed
+  summary: An open multilingual corpus and moderation tool designed to detect and prevent online gender-based violence.
+  problem: ""
+  approach: ""
+  result: ""
+  image: ""
+  image_alt: ""
+  featured: true
+  verified: false
+- id: youth-igf-summit
+  title: Youth IGF Summit
+  pillar: governance
+  role: Organized and facilitated
+  years: To be confirmed
+  summary: A summit on inclusivity, internet governance, and multistakeholder participation that brought together youth, civil society, government, and the technical community.
+  problem: ""
+  approach: ""
+  result: ""
+  image: ""
+  image_alt: ""
+  featured: true
+  verified: false

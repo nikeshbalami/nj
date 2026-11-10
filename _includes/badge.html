@@ -1,0 +1,2 @@
+{%- assign b = site.data.pillars | where: "id", include.pillar | first -%}
+<li class="badge p-{{ b.id }}">{{ b.short }}</li>

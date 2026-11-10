@@ -1,0 +1,5 @@
+{%- if site.data.about.portrait != "" -%}
+<img class="portrait" src="{{ site.data.about.portrait | relative_url }}" alt="{{ site.data.about.portrait_alt }}" width="600" height="750" loading="lazy">
+{%- else -%}
+{% include placeholder.html label="Portrait" ratio="4 / 5" %}
+{%- endif -%}

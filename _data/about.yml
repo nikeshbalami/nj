@@ -1,0 +1,25 @@
+story:
+  - Nhasala Joshi is an engineer turned development practitioner, and the co-founder and Executive Director of Women Leaders in Technology (WLiT), Nepal.
+  - For over a decade she has led WLiT, which has run 14 fellowship cohorts, supported more than 200 women tech professionals, and convened more than 1,000 attendees at its flagship community events.
+  - "Her work spans four areas: community and ecosystem building, inclusion, digital rights, data, and civic tech, and internet governance."
+  - "[Placeholder: a closing paragraph on what drives her work and what she is focused on now. To be written with Nhasala.]"
+portrait: ""
+portrait_alt: Portrait of Nhasala Joshi
+glance:
+  - label: Based in
+    value: Nepal
+  - label: Leads
+    value: Women Leaders in Technology (WLiT), Nepal
+  - label: Background
+    value: Engineering
+  - label: Works on
+    value: Inclusion, digital rights, data, and internet governance
+path:
+  - title: Engineer
+    text: Trained as an engineer.
+  - title: Community builder
+    text: Co-founded Women Leaders in Technology (WLiT) to build a community of women in technology in Nepal.
+  - title: Institution leader
+    text: Grew WLiT into an organization with 14 fellowship cohorts and more than 200 women tech professionals.
+  - title: Policy voice
+    text: Brings young people's and women's voices into conversations on digital rights and internet governance.

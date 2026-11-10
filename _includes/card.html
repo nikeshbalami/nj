@@ -1,0 +1,15 @@
+{%- assign p = include.project -%}
+<article class="card p-{{ p.pillar }}">
+  {%- if p.image != "" %}
+  <img class="card__img" src="{{ p.image | relative_url }}" alt="{{ p.image_alt }}" width="640" height="400" loading="lazy">
+  {%- else %}
+  <div class="card__img">{% include placeholder.html label="Project image" %}</div>
+  {%- endif %}
+  <div class="card__body">
+    <ul class="badges">{% include badge.html pillar=p.pillar %}</ul>
+    <h3 class="card__title"><a href="{{ '/projects/' | relative_url }}#{{ p.id }}">{{ p.title }}</a> {% include flag.html item=p %}</h3>
+    <p class="card__meta">{{ p.role }}, {{ p.years }}</p>
+    <p class="card__summary">{{ p.summary }}</p>
+    <span class="card__more" aria-hidden="true">Learn more</span>
+  </div>
+</article>
